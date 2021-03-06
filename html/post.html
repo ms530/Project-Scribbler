@@ -94,8 +94,7 @@
         </div>
 
         <div class="blogText" id="blogBodyId">
-            <p id="blogBody">
-                Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.
+            <p id="blogBody"> Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.
              <p>‘let’ vs. ‘const’:</p>   
 Change of value in future
 Variables declared using the let keyword can change their values in the future.
@@ -144,19 +143,17 @@ Do you think an error will be thrown? Let’s check the output. Here we go.
         </button>
         <p style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px">
             <spna style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px" id="counterLikedBy">1</spna> person likes this!</p>
-        <div style="font-family: 'Abel', sans-serif; padding-left: 5px">Be the first one to like this!</div>
+        <div style="font-family: 'Abel', sans-serif; padding-left: 5px" class="likeText">Be the first one to like this!</div>
     </div>
 
 
-        <div class="commentPost">
+        <div id="commentPost">
             <textarea id="txtCommentCommentPost" class="commentPost" rows="4" cols="100" placeholder="Leave a comment"></textarea>
-        </div>
-        <button class="postLike" onclick="addComment()">Comment</button>
-        <div class="commentSection">
-            <h3>All Comments</h3>
-            <div class="allComments" id="listAllComments">
-                
-            </div>
+        <div><button onclick="cmnt()">Comment</button>
+		<B><p>All Comments</p></B>
+		<div id="commentArea" style="width: 45%; background-color: darkgray; height: auto; padding: 10px ;display: none">
+		</div>	
+    </div>
         </div>
 
     </div>

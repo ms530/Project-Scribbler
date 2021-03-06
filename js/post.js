@@ -80,16 +80,15 @@ function updateEditedBlog(){
   getDiv.innerHTML=pElement;
 
 }
-function addComment(){
-  console.log("Inside add comment");
-  var x = document.getElementById("txtCommentCommentPost").addEventListener("onchange", function(){
-    document.getElementById("txtCommentCommentPost").innerHTML;
-  });
+function cmnt()
+{
+    console.log("Inside add comment");
+    var x = document.getElementById('txtCommentCommentPost').addEventListener("onchange", function(){
+        document.getElementById('txtCommentCommentPost').innerHTML;
+      });
 
-  var x = document.getElementById("txtCommentCommentPost").value;
-  
-  console.log(x);
-  var pElement = '<p >'+ x + '</p>';
-  var getDiv = document.getElementById('listAllComments');
-  getDiv.innerHTML = pElement + getDiv.innerHTML;
+    document.getElementById('commentArea').style.display="block";
+	var text=document.getElementById('txtCommentCommentPost').value;
+    console.log(text);
+	document.getElementById('commentArea').innerHTML+="<p style='background-color:white; margin:10px; padding-top:11px;height:35px;'>"+text+"</p>";
 }
