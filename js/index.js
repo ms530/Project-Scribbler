@@ -9,6 +9,6 @@ function showCreatePost(){
   }
   
   function navigateToBlogList(){
-    location.href = "html/bloglist.html"
+    location.href = "html/postslist.html"
   }
   
