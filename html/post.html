@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link href='..\css\post.css' rel='stylesheet' type='text/css'>
+    <link href='..\css\common.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="..\font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href='..\css\font.css' rel='stylesheet' type='text/css'>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title-container">
+            <p class="title">ScriBBler</p>
+            <p class="sub-title">Explore, Imagine, Create</p>
+        </div>
+        <div class="login-buttons-container">
+            <button onclick="showSignInModal()" class="blue-button" type="button">Sign In</button>
+            <button onclick="showSignUpModal()" class="blue-button" type="button">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Insert code for Sign In modal here -->
+    <div class="modal" id="signin-modal">
+        <div class="modal-content">
+
+            <div class="modal-head">
+                <span onclick="hideSignInModal()" id="close" class="close">&times;</span>
+                <h2 class="modal-title">Welcome Back!</h2>
+            </div>
+
+            <hr>
+
+            <form>
+                <label for="username" class="label-text">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <label for="password" class="label-text">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="submit" onclick="signin(username, password)" class="signin-btn">Sign In</button>
+            </form>
+
+            <p class=bottom-banner>Not a member?
+                <span onclick="hideSignInModal();showSignUpModal()" class=signup>Sign Up</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Insert code for Sign Up modal here -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+
+            <div class="modal-head">
+                <span onclick="hideSignUpModal()" id="close" class="close">&times;</span>
+                <h2 class="modal-title">Get Started</h2>
+            </div>
+
+            <hr>
+
+            <form>
+                <label for="fullname" class="label-text">Full name</label>
+                <input type="text" id="fullname" placeholder="Enter Full Name" required>
+                <label for="username" class="label-text">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <label for="password" class="label-text">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <label for="confirmpassword" class="label-text">Confirm Password</label>
+                <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit" onclick="signup(firstName,lastName, email, password, mobile)" class="signin-btn">Sign up</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="postMainLayout">
+
+
+        <div class="blogContent">
+            <div id="blogTitle" class="blogTite">
+                <h id="blogTitleNew">‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</h>
+            </div>
+        </div>
+        <div class="blogAuthor">
+
+            <!-- Insert code for Edit/Save button and  -->
+            <p class="postAuthor">Srishti Gupta</p>
+            <div id="editPost" onclick="toggleEditSave()">
+                    <button class="postEdit" id ="edtPstBtn">Edit
+                            <i style="font-size: 14px;font-weight: bolder;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                    
+            </div>
+            
+        </div>
+
+        <div class="blogText" id="blogBodyId">
+            <p id="blogBody">
+                Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.
+             <p>‘let’ vs. ‘const’:</p>   
+Change of value in future
+Variables declared using the let keyword can change their values in the future.
+Consider the example given below:
+
+<p>let iChange = 11;
+    iChange = 12;</p>
+console.log(iChange);
+<p>Output:
+
+    12</p>
+On the first line, the variable iChange is declared using the let keyword and is initialized with value 11. When you come down to the next line, the variable iChange is again assigned a new value, which is 12. Changing the values of variables declared using the let keyword is allowed. When, on the last line, you try to print the value of the variable iChange, you correctly get the updated value 12.
+
+Variables declared using the const keyword cannot change their values in future. This is why you must always initialize the variables declared with the const keyword.
+<p>const PI = 3.14;PI = 22/7;
+    console.log(PI);</p>
+Output:
+
+Unca  ught TypeError: Assignment to constant variable
+<p>Here, the variable PI is declared using the const keyword and is initialized with value 3.14 on the first line. When you come down to the next line, the variable PI is updated with a new value 22/7. Changing values of variables declared using the const keyword is not allowed. This is why the second line throws the error shown in the output because you are trying to assign a new value to a constant variable. Therefore, remember that variables declared using the const keyword are read-only & cannot be reassigned any value.
+
+As mentioned earlier, it is mandatory to initialize a constant when declaring it. Let’s see the following statement of code:</p>
+
+const PI;
+Output:
+
+Uncaught SyntaxError: Missing initializer in const declaration
+You know that you cannot update a constant in future. If you do not initialize a constant during its declaration, you will not be able to assign any value to it EVER! This is why you get a SyntaxError when you leave a constant uninitialized.
+
+What do you think will be the output of the code given below?
+
+<p>const passengerBus = {wheels: 8, passengers: 40}passengerBus.passengers = 50;
+console.log(passengerBus);</p>
+Do you think an error will be thrown? Let’s check the output. Here we go.
+
+<p>Output:
+
+{ wheels: 8, passengers: 50 }
+</p> 
+            </p>
+        </div>
+        <div>
+        <button class="postLike" onclick="incrementCounter()">Like
+            <i style="font-size: 14px;font-weight: bolder;" class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+        </button>
+        <p style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px">
+            <spna style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px" id="counterLikedBy">1</spna> person likes this!</p>
+        <div style="font-family: 'Abel', sans-serif; padding-left: 5px">Be the first one to like this!</div>
+    </div>
+
+
+        <div class="commentPost">
+            <textarea id="txtCommentCommentPost" class="commentPost" rows="4" cols="100" placeholder="Leave a comment"></textarea>
+        </div>
+        <button class="postLike" onclick="addComment()">Comment</button>
+        <div class="commentSection">
+            <h3>All Comments</h3>
+            <div class="allComments" id="listAllComments">
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Insert code for Like button, Comment button, Comment box here-->
+
+    <script src="..\js\post.js" defer></script>
+    <script src="..\js\common.js">             
+    </script>
+
+</body>
